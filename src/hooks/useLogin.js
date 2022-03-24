@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-
-import { projectAuth } from '../firebase/config';
+import { doc, setDoc } from 'firebase/firestore';
+import { db, projectAuth } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -26,6 +26,15 @@ export const useLogin = () => {
             );
 
             dispatch({ type: 'LOGIN', payload: res.user });
+
+            const { displayName, photoURL } = res.user;
+
+            // set user to visibly online
+            await setDoc(doc(db, 'users', res.user.uid), {
+                displayName,
+                photoURL,
+                online: true,
+            });
 
             // update state
             if (!unmounted) {

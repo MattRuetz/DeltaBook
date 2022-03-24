@@ -73,17 +73,17 @@ export const useSignup = () => {
             const newUser = res.user;
 
             // storeImage returns the URL of the newly stored thumbnail
-            const imgUrl = await storeImage(thumbnail, newUser);
+            const photoURL = await storeImage(thumbnail, newUser);
 
             // Add displayName prop to AUTH (not firestore)
-            await updateProfile(newUser, { displayName, photoURL: imgUrl });
+            await updateProfile(newUser, { displayName, photoURL });
 
             // Create user doc
             // Add a new document in collection "users" in firestore
             await setDoc(doc(db, 'users', newUser.uid), {
                 online: true,
                 displayName,
-                imgUrl,
+                photoURL,
             });
 
             // Dispatch LOGIN to log in new user
