@@ -1,18 +1,23 @@
 import { useState, useEffect } from 'react';
-import { projectAuth } from '../firebase/config';
+import { projectAuth, db } from '../firebase/config';
+import { doc, updateDoc } from 'firebase/firestore';
 import { useAuthContext } from './useAuthContext';
 
 export const useLogout = () => {
     const [unmounted, setUnmounted] = useState(false);
     const [error, setError] = useState(null);
     const [isPending, setIsPending] = useState(false);
-    const { dispatch } = useAuthContext();
+    const { dispatch, user } = useAuthContext();
 
     const logout = async () => {
         setError(null);
         setIsPending(true);
 
         try {
+            const { uid } = user;
+
+            await updateDoc(doc(db, 'users', uid), { online: false });
+
             await projectAuth.signOut();
 
             dispatch({ type: 'LOGOUT' });
