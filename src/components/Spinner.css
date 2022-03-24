@@ -1,0 +1,101 @@
+.spinner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.alpha-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--primary-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 0s infinite;
+}
+
+.beta-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--bg-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 0.2s infinite;
+}
+
+.charlie-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--highlight-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 0.4s infinite;
+}
+
+.delta-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--primary-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 0.6s infinite;
+}
+.echo-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--bg-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 0.8s infinite;
+}
+
+.foxtrot-triangle {
+    position: absolute;
+    font-size: 0px;
+    line-height: 0%;
+    width: 0;
+    left: 45%;
+    top: 45%;
+    border-bottom: 120px solid var(--highlight-color);
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    animation: spinning 1.2s linear 1s infinite;
+}
+
+@keyframes spinning {
+    0% {
+        scale: 1;
+    }
+
+    15% {
+        scale: 1;
+    }
+    40% {
+        scale: 0;
+    }
+    50% {
+        scale: 0;
+    }
+    100% {
+        scale: 1;
+    }
+}
