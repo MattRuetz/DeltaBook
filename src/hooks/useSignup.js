@@ -2,12 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db, projectAuth, projectStorage } from '../firebase/config';
 import { doc, setDoc } from 'firebase/firestore';
-import {
-    uploadBytesResumable,
-    ref,
-    uploadBytes,
-    getDownloadURL,
-} from 'firebase/storage';
+import { uploadBytesResumable, ref, getDownloadURL } from 'firebase/storage';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useAuthContext } from './useAuthContext';
 
