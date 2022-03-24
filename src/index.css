@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Major+Mono+Display&family=Syncopate:wght@400;700&display=swap');
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Major Mono Display', monospace;
+font-family: 'Syncopate', sans-serif; */
 
 /* variables */
 :root {
-    --heading-color: #161616;
-    --text-color: #555;
+    /* #ecdbba */
+    --heading-color: #ecdbba;
+    --text-color: #fff;
     --primary-color: #346751;
     --highlight-color: #c84b31;
-    --bg-color: #ecdbba;
+    --bg-color: #161616;
 }
 
 /* base styles */
@@ -32,7 +36,8 @@ ul {
 
 /* layout */
 .page-title {
-    font-family: 'Syncopate', sans-serif;
+    /* font-family: 'Syncopate', sans-serif; */
+    font-family: 'Major Mono Display', monospace;
     font-size: 1em;
     color: var(--heading-color);
     display: inline-block;
