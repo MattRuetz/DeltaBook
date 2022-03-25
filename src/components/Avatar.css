@@ -13,9 +13,9 @@
 
 .avatar.online {
     border: 1.5px solid var(--online-color);
-    box-shadow: 0px 0px 7px var(--online-color);
+    box-shadow: -2px 0px 10px var(--online-color);
 }
 .avatar.offline {
     border: 1.5px solid var(--offline-color);
-    box-shadow: 0px 0px 7px var(--offline-color);
+    box-shadow: -2px 0px 10px var(--offline-color);
 }

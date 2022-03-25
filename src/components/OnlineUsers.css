@@ -8,7 +8,7 @@
 }
 
 .user-list span {
-    color: var(--heading-color);
+    color: var(--text-color);
 }
 
 .user-list h2 {
