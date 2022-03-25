@@ -6,12 +6,6 @@
     height: 100%;
 }
 
-.spinner-container {
-    text-align: center;
-    font-family: 'Major Mono Display', monospace;
-    color: var(--highlight-color);
-}
-
 .triangle {
     position: absolute;
     font-size: 0px;
