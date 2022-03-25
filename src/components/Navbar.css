@@ -37,11 +37,12 @@
 .navbar a {
     text-decoration: none;
     line-height: 0.8;
+    margin-right: 15px;
 }
 .navbar a span {
     color: var(--highlight-color);
     text-decoration: none;
-    /* margin-right: 30px; */
+    margin-right: 30px;
 }
 
 .navbar .logout-btn {

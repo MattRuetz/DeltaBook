@@ -59,7 +59,7 @@ span {
     cursor: pointer;
     font-size: 1em;
     border: 1px solid var(--text-color);
-    transition: all 0.3s;
+    transition: box-shadow 0.2s;
 }
 .btn:hover {
     box-shadow: 0 0 10px var(--highlight-color);

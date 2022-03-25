@@ -2,7 +2,7 @@ export const selectStyles = {
     menu: (provided, state) => ({
         ...provided,
         // width: state.selectProps.width,
-        borderBottom: '1px dotted pink',
+        border: '1px solid var(--highlight-color)',
         color: 'var(--highlight-color)',
         background: 'var(--bg-color)',
         padding: 20,
@@ -25,6 +25,18 @@ export const selectStyles = {
             opacity,
             transition,
             color: 'var(--text-color)',
+        };
+    },
+    multiValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+
+        return {
+            ...provided,
+            opacity,
+            transition,
+            background: 'var(--text-color)',
+            color: 'var(--bg-color)',
         };
     },
 };
