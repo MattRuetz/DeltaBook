@@ -1,39 +1,49 @@
 .spinner-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 }
+
+.spinner-container {
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    color: var(--highlight-color);
+}
+
 .triangle {
     position: absolute;
     font-size: 0px;
     line-height: 0%;
     width: 0;
-    left: 40%;
+    scale: 0;
+    left: 42.5%;
     top: 30%;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
 }
-.triangle:nth-of-type(1n) {
+.triangle:nth-of-type(0) {
     border-bottom: 120px solid var(--primary-color);
     animation: spinning 1.2s ease 0s infinite;
 }
-.triangle:nth-of-type(2n) {
+.triangle:nth-of-type(1) {
     border-bottom: 120px solid var(--bg-color);
     animation: spinning 1.2s ease 0.1s infinite;
 }
-.triangle:nth-of-type(3n) {
+.triangle:nth-of-type(2) {
     border-bottom: 120px solid var(--highlight-color);
     animation: spinning 1.2s ease 0.2s infinite;
 }
-.triangle:nth-of-type(4n) {
+.triangle:nth-of-type(3) {
     border-bottom: 120px solid var(--primary-color);
     animation: spinning 1.2s ease 0.3s infinite;
 }
-.triangle:nth-of-type(5n) {
+.triangle:nth-of-type(4) {
     border-bottom: 120px solid var(--bg-color);
     animation: spinning 1.2s ease 0.4s infinite;
 }
-.triangle:nth-of-type(6n) {
+.triangle:nth-of-type(5) {
     border-bottom: 120px solid var(--highlight-color);
     animation: spinning 1.2s ease 0.5s infinite;
 }
