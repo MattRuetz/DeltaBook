@@ -25,15 +25,30 @@
     text-shadow: 0 0 15px var(--highlight-color);
     font-size: 30px;
     margin-top: -8px;
+    margin-right: 10px;
     transition: all 0.3s ease;
 }
 
 .navbar .logo:hover .logo-img {
     filter: invert(0);
     text-shadow: 0 0 30px red;
+    margin-right: 15px;
 }
 .navbar a {
+    text-decoration: none;
+    line-height: 0.8;
+}
+.navbar a span {
     color: var(--highlight-color);
     text-decoration: none;
-    margin-right: 30px;
+    /* margin-right: 30px; */
+}
+
+.navbar .logout-btn {
+    color: var(--highlight-color);
+    border: 1px solid var(--highlight-color);
+}
+.logout-btn:hover {
+    color: #fff;
+    background-color: var(--highlight-color);
 }

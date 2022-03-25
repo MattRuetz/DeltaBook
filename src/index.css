@@ -6,11 +6,14 @@ font-family: 'Syncopate', sans-serif; */
 /* variables */
 :root {
     /* #ecdbba */
-    --heading-color: #ecdbba;
-    --text-color: #fff;
+    --heading-color: #c84b31;
+    --text-color: #ecdbba;
     --primary-color: #346751;
     --highlight-color: #c84b31;
     --bg-color: #161616;
+    --light-bg-color: #333333;
+    --online-color: #0ebb50;
+    --offline-color: #c84b31;
 }
 
 /* base styles */
@@ -33,27 +36,37 @@ h4 {
 ul {
     list-style-type: none;
 }
+span {
+    color: var(--bg-color);
+}
 
 /* layout */
 .page-title {
-    /* font-family: 'Syncopate', sans-serif; */
-    font-family: 'Major Mono Display', monospace;
-    font-size: 1em;
-    color: var(--heading-color);
+    font-family: 'Syncopate', sans-serif;
+    letter-spacing: 0.05em;
+    /* font-family: 'Major Mono Display', monospace; */
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-shadow: 0px 0px 10px var(--highlight-color);
+    padding: 10px 20% 10px 10px;
     display: inline-block;
 }
 .btn {
-    background: #fff;
+    background: var(--bg-color);
     padding: 8px 12px;
     border-radius: 4px;
-    color: var(--primary-color);
+    color: var(--text-color);
     cursor: pointer;
     font-size: 1em;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--text-color);
+    transition: all 0.3s;
 }
 .btn:hover {
-    color: #fff;
-    background-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--highlight-color);
+}
+
+.btn:active {
+    transform: translateY(2px);
 }
 
 /* forms */
@@ -69,12 +82,14 @@ input,
 textarea {
     padding: 8px 6px;
     font-size: 1em;
-    color: #777;
+    color: var(--text-color);
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--highlight-color);
+    background-color: var(--bg-color);
+    border-radius: 3px;
 }
+
 textarea {
     min-height: 160px;
 }

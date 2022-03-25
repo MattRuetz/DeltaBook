@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
+import Spinner from '../components/Spinner';
 import { useAuthContext } from '../hooks/useAuthContext';
 import './Navbar.css';
 
@@ -13,11 +14,12 @@ function Navbar() {
                 <li className="logo">
                     <Link to="/">
                         <span>
-                            Delta <span className="logo-img">⟁</span> Book
+                            <span className="logo-img">⟁</span> Delta Book
                         </span>
                     </Link>
                 </li>
-                {!user && authIsReady ? (
+                {isPending && !authIsReady && <Spinner />}
+                {!user && authIsReady && (
                     <>
                         <li>
                             <Link to="/login">Login</Link>
@@ -26,18 +28,12 @@ function Navbar() {
                             <Link to="/signup">Sign up</Link>
                         </li>
                     </>
-                ) : (
+                )}
+                {user && authIsReady && (
                     <li>
-                        {!isPending && (
-                            <button className="btn" onClick={logout}>
-                                Logout
-                            </button>
-                        )}
-                        {isPending && (
-                            <button className="btn" disabled>
-                                ...
-                            </button>
-                        )}
+                        <button className="btn logout-btn" onClick={logout}>
+                            Logout
+                        </button>
                     </li>
                 )}
             </ul>
