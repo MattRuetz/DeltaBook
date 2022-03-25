@@ -7,10 +7,13 @@ font-family: 'Syncopate', sans-serif; */
 :root {
     /* #ecdbba */
     --heading-color: #ecdbba;
-    --text-color: #fff;
+    --text-color: #eee3cc;
     --primary-color: #346751;
     --highlight-color: #c84b31;
     --bg-color: #161616;
+    --light-bg-color: #333333;
+    --online-color: #0ebb50;
+    --offline-color: #c84b31;
 }
 
 /* base styles */
@@ -33,17 +36,23 @@ h4 {
 ul {
     list-style-type: none;
 }
+span {
+    color: var(--bg-color);
+}
 
 /* layout */
 .page-title {
-    /* font-family: 'Syncopate', sans-serif; */
-    font-family: 'Major Mono Display', monospace;
-    font-size: 1em;
-    color: var(--heading-color);
+    font-family: 'Syncopate', sans-serif;
+    letter-spacing: 0.05em;
+    /* font-family: 'Major Mono Display', monospace; */
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-shadow: 0px 0px 10px var(--highlight-color);
+    padding: 10px 20% 10px 10px;
     display: inline-block;
 }
 .btn {
-    background: #fff;
+    background: var(--bg-color);
     padding: 8px 12px;
     border-radius: 4px;
     color: var(--primary-color);
@@ -69,11 +78,18 @@ input,
 textarea {
     padding: 8px 6px;
     font-size: 1em;
-    color: #777;
+    color: var(--text-color);
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--highlight-color);
+    background-color: var(--bg-color);
+    border-radius: 3px;
+}
+input:focus,
+textarea:focus {
+    outline: unset;
+    box-shadow: 0px 0px 8px var(--highlight-color);
+    /* border-radius: 4px; */
 }
 textarea {
     min-height: 160px;

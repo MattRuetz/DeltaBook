@@ -38,9 +38,11 @@
     filter: invert(100%);
 }
 .sidebar .links a.active {
-    color: #555;
     background: var(--bg-color);
     border-radius: 20px 0 0 20px;
+}
+.sidebar .links a.active span {
+    color: var(--heading-color);
 }
 .sidebar .links .active img {
     filter: invert(40%);

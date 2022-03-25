@@ -1,10 +1,10 @@
 import './Avatar.css';
 
-function Avatar({ src }) {
+function Avatar({ src, userStatus }) {
     return (
-        <div className="avatar">
-            <img src={src} alt="user avatar" />
-        </div>
+        <div className={`avatar ${userStatus}`}>
+            <img src={src} alt={`avatar - ${userStatus}`}  />
+        </div> 
     );
 }
 

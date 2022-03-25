@@ -12,7 +12,7 @@ function Sidebar() {
             <div className="sidebar-content">
                 <div className="user">
                     <Avatar src={user.photoURL} />
-                    <p>Hey, {user.displayName}</p>
+                    <p>Hey, <span>{user.displayName.substring(0,15)}{user.displayName.length > 15 && `...`}</span></p>
                 </div>
                 <nav className="links">
                     <ul>

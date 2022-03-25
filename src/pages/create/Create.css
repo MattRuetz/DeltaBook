@@ -1,0 +1,6 @@
+.create-form {
+    max-width: 600px;
+}
+.create-form span {
+    color: var(--heading-color);
+}

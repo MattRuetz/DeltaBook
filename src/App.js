@@ -5,6 +5,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Navbar from './components/Navbar';
 import Spinner from './components/Spinner';
 import Sidebar from './components/Sidebar';
+import OnlineUsers from './components/OnlineUsers'
 // Pages
 import Dashboard from './pages/dashboard/Dashboard';
 import Create from './pages/create/Create';
@@ -49,6 +50,7 @@ function App() {
                     )}
                     {!authIsReady && <Spinner />}
                 </div>
+                {user && <OnlineUsers />}
             </Router>
         </div>
     );
