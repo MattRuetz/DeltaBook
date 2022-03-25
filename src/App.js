@@ -16,15 +16,15 @@ import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
     // const { authIsReady } = useAuthContext();
-    const authIsReady = false;
+    const authIsReady = false; //To test spinner
 
     return (
         <div className="App">
-            {authIsReady && (
-                <Router>
-                    <Sidebar />
-                    <div className="container">
-                        <Navbar />
+            <Router>
+                <Sidebar />
+                <div className="container">
+                    <Navbar />
+                    {authIsReady && (
                         <Routes>
                             <Route path="/" element={<PrivateRoute />}>
                                 <Route path="/" element={<Dashboard />} />
@@ -46,10 +46,10 @@ function App() {
                                 element={<h1>404: Not Found!</h1>}
                             />
                         </Routes>
-                    </div>
-                </Router>
-            )}
-            {!authIsReady && <Spinner />}
+                    )}
+                    {!authIsReady && <Spinner />}
+                </div>
+            </Router>
         </div>
     );
 }

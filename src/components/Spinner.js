@@ -5,12 +5,12 @@ import './Spinner.css';
 function Spinner() {
     return (
         <div className="spinner-container">
-            <div className="alpha-triangle"></div>
-            <div className="beta-triangle"></div>
-            <div className="charlie-triangle"></div>
-            <div className="delta-triangle"></div>
-            <div className="echo-triangle"></div>
-            <div className="foxtrot-triangle"></div>
+            <div className="triangle"></div>
+            <div className="triangle"></div>
+            <div className="triangle"></div>
+            <div className="triangle"></div>
+            <div className="triangle"></div>
+            <div className="triangle"></div>
         </div>
     );
 }
