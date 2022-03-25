@@ -17,6 +17,7 @@ function Create() {
     const [dueDate, setDueDate] = useState('');
     const [category, setCategory] = useState('');
     const [assignedUsers, setAssignedUsers] = useState([]);
+    const [formError, setFormError] = useState(null);
 
     const { documents } = useCollection('users');
     const [users, setUsers] = useState([]);
@@ -33,7 +34,11 @@ function Create() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name, details, dueDate);
+        setFormError(null);
+
+        !category && setFormError('Select a project category');
+        assignedUsers.length < 1 &&
+            setFormError('Please select at least 1 Team Member');
     };
 
     return (
@@ -89,6 +94,7 @@ function Create() {
                     />
                 </label>
                 <button className="btn">Create</button>
+                {formError && <p className="error">{formError}</p>}
             </form>
         </div>
     );

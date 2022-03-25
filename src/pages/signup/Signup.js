@@ -74,7 +74,7 @@ function Signup() {
                 {uploadError && <div className="error">{uploadError}</div>}
             </label>
 
-            {!isPending && <button className="btn">Let's go!</button>}
+            {!isPending && <button className="btn">Create Account</button>}
             {isPending && (
                 <button className="btn" disabled>
                     Loading...
