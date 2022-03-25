@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
+import '../signup/Signup.css';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ function Login() {
 
     return (
         <form className="auth-form" onSubmit={handleSubmit}>
-            <h2>Sign in:</h2>
+            <h2>Login:</h2>
             <label>
                 <span>Email:</span>
                 <input
@@ -33,7 +34,7 @@ function Login() {
                     value={password}
                 />
             </label>
-            {!isPending && <button className="btn">Let's go!</button>}
+            {!isPending && <button className="btn">Login</button>}
             {isPending && (
                 <button className="btn" disabled>
                     Loading...

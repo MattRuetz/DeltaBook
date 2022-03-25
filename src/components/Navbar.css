@@ -36,8 +36,14 @@
 }
 .navbar a {
     text-decoration: none;
+    color: var(--text-color);
     line-height: 0.8;
     margin-right: 15px;
+    transition: all 0.3s;
+}
+.navbar a:hover {
+    background: var(--highlight-color);
+    color: var(--bg-color);
 }
 .navbar a span {
     color: var(--highlight-color);
