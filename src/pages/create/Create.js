@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useCollection } from '../../hooks/useCollection';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import Select from 'react-select/creatable';
+// import { timestamp } from '../../firebase/config';
+// import { fromDate } from 'firebase/firestore/Timestamp';
 import styles from './SelectStyles';
 import './Create.css';
 
@@ -22,6 +25,8 @@ function Create() {
     const { documents } = useCollection('users');
     const [users, setUsers] = useState([]);
 
+    const { user } = useAuthContext();
+
     useEffect(() => {
         if (documents) {
             const options = documents.map((user) => ({
@@ -39,6 +44,30 @@ function Create() {
         !category && setFormError('Select a project category');
         assignedUsers.length < 1 &&
             setFormError('Please select at least 1 Team Member');
+    };
+
+    const createdBy = {
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        id: user.id,
+    };
+
+    const assignedUsersList = assignedUsers.map((chosenUser) => {
+        return {
+            displayName: chosenUser.value.displayName,
+            photoURL: chosenUser.value.photoURL,
+            id: chosenUser.value.uid,
+        };
+    });
+
+    const project = {
+        name,
+        details,
+        category: category.value,
+        dueDate: fromDate(new Date(dueDate)),
+        comments: [],
+        createdBy,
+        assignedUsersList,
     };
 
     return (
