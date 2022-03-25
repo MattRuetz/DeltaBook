@@ -15,13 +15,13 @@ import Project from './pages/project/Project';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
-    // const { authIsReady } = useAuthContext();
-    const authIsReady = false; //To test spinner
+    const { authIsReady, user } = useAuthContext();
+    // const authIsReady = false; //To test spinner
 
     return (
         <div className="App">
             <Router>
-                <Sidebar />
+                {user && <Sidebar />}
                 <div className="container">
                     <Navbar />
                     {authIsReady && (

@@ -11,6 +11,7 @@ function Spinner() {
             <div className="triangle"></div>
             <div className="triangle"></div>
             <div className="triangle"></div>
+            <h3>l0AdinG</h3>
         </div>
     );
 }
