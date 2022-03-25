@@ -62,7 +62,7 @@ export const useFirestore = (collectionName) => {
         }
     };
 
-    // Add document
+    // Add document, input is an object, which gets turned into a DB doc
     const addDocument = async (doc) => {
         dispatch({ type: 'IS_PENDING' });
 
@@ -87,7 +87,7 @@ export const useFirestore = (collectionName) => {
         }
     };
 
-    // delete a doc
+    // delete a doc, ref'd by id
     const deleteDocument = async (id) => {
         dispatch({ type: 'IS_PENDING' });
 
