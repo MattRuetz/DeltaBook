@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useCollection } from '../../hooks/useCollection';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { useFirestore } from '../../hooks/useFirestore';
 import Select from 'react-select/creatable';
-// import { timestamp } from '../../firebase/config';
-// import { fromDate } from 'firebase/firestore/Timestamp';
+import { useNavigate } from 'react-router-dom';
+import { Timestamp } from 'firebase/firestore';
 import styles from './SelectStyles';
 import './Create.css';
 
@@ -27,6 +28,12 @@ function Create() {
 
     const { user } = useAuthContext();
 
+    const nav = useNavigate();
+
+    const { addDocument, response } = useFirestore('projects');
+
+    // doc(db, 'projects', newUser.uid);
+
     useEffect(() => {
         if (documents) {
             const options = documents.map((user) => ({
@@ -37,37 +44,40 @@ function Create() {
         }
     }, [documents]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setFormError(null);
 
         !category && setFormError('Select a project category');
         assignedUsers.length < 1 &&
             setFormError('Please select at least 1 Team Member');
-    };
 
-    const createdBy = {
-        displayName: user.displayName,
-        photoURL: user.photoURL,
-        id: user.id,
-    };
-
-    const assignedUsersList = assignedUsers.map((chosenUser) => {
-        return {
-            displayName: chosenUser.value.displayName,
-            photoURL: chosenUser.value.photoURL,
-            id: chosenUser.value.uid,
+        const createdBy = {
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            id: user.uid,
         };
-    });
 
-    const project = {
-        name,
-        details,
-        category: category.value,
-        dueDate: fromDate(new Date(dueDate)),
-        comments: [],
-        createdBy,
-        assignedUsersList,
+        const assignedUsersList = assignedUsers.map((chosenUser) => {
+            return {
+                displayName: chosenUser.value.displayName,
+                photoURL: chosenUser.value.photoURL,
+                id: chosenUser.value.id,
+            };
+        });
+
+        const project = {
+            name,
+            details,
+            category: category.value,
+            dueDate: Timestamp.fromDate(new Date(dueDate)),
+            comments: [],
+            createdBy,
+            assignedUsersList,
+        };
+
+        await addDocument(project);
+        !response.error && nav('/');
     };
 
     return (
