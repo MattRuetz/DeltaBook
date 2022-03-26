@@ -21,10 +21,10 @@ function Navbar() {
                 {isPending && !authIsReady && <Spinner />}
                 {!user && authIsReady && (
                     <>
-                        <li>
+                        <li className="nav-options">
                             <Link to="/login">Login</Link>
                         </li>
-                        <li>
+                        <li className="nav-options">
                             <Link to="/signup">Sign up</Link>
                         </li>
                     </>

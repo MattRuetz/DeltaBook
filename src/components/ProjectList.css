@@ -1,5 +1,6 @@
 .project-list {
     margin-top: 40px;
+    margin-bottom: 300px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 20px;
@@ -13,12 +14,13 @@
     color: inherit;
 }
 .project-list h4 {
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-weight: 500;
-    background-color: var(--bg-color);
+    background-color: var(--primary-color);
+    background-image: url('../assets/pattern2.svg');
     padding: 3px;
     text-align: center;
-    color: var(--heading-color);
+    color: var(--light-text-color);
 }
 
 .project-list p {

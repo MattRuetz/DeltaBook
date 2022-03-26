@@ -26,7 +26,7 @@
     font-size: 30px;
     margin-top: -8px;
     margin-right: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .navbar .logo:hover .logo-img {
@@ -36,14 +36,14 @@
 }
 .navbar a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--highlight-color);
     line-height: 0.8;
     margin-right: 15px;
-    transition: all 0.3s;
 }
-.navbar a:hover {
+.nav-options:hover a {
     background: var(--highlight-color);
     color: var(--bg-color);
+    transition: all 0.25s ease;
 }
 .navbar a span {
     color: var(--highlight-color);
