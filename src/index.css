@@ -11,7 +11,8 @@ font-family: 'Syncopate', sans-serif; */
     --primary-color: #346751;
     --highlight-color: #c84b31;
     --bg-color: #161616;
-    --light-bg-color: #333333;
+    --light-bg-color: #555;
+    --lighter-bg-color: #ccc;
     --online-color: #0ebb50;
     --offline-color: #c84b31;
 }
@@ -32,6 +33,9 @@ h3,
 h4 {
     margin: 0;
     padding: 0;
+}
+hr {
+    color: var(--light-bg-color);
 }
 ul {
     list-style-type: none;
