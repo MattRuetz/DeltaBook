@@ -1,0 +1,42 @@
+/* Filters selectors */
+.project-filter {
+    margin: 30px auto;
+}
+.project-filter nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: var(--light-bg-color);
+    border-radius: 4px;
+}
+.project-filter p {
+    font-size: 0.9em;
+    margin-right: 10px;
+    border-bottom: 5px solid var(--highlight-color);
+    padding: 0;
+}
+.project-filter button {
+    background: transparent;
+    border: 0;
+    font-family: inherit;
+    font-weight: bold;
+    color: var(--dark-text-color);
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+}
+/* .project-filter button:last-child {
+    border: 0;
+} */
+.project-filter .flex-divider {
+    display: flex;
+    height: 50px;
+    background-color: aqua;
+    width: 2px;
+}
+.project-filter button.active {
+    border: 2px solid var(--highlight-color);
+    color: var(--primary-color);
+}

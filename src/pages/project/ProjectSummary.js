@@ -30,7 +30,11 @@ function ProjectSummary({ project }) {
                     </span>
                 </p>
                 <p className="due-date">
-                    Due: <span>{project.dueDate.toDate().toDateString()}</span>
+                    Due:
+                    <span>
+                        {'  '}
+                        {project.dueDate.toDate().toDateString()}
+                    </span>
                 </p>
                 <p className="details">{project.details}</p>
                 <h4>Dev Team: </h4>
