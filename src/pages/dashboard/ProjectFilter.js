@@ -1,17 +1,23 @@
-const filterlist = '../../data/ProjectTags.json';
+import filterlist from '../../data/ProjectTags.json';
 
-function ProjectFilter() {
+function ProjectFilter({ currentFilter, changeFilter }) {
     const handleClick = (newTag) => {
-        console.log(newTag);
+        changeFilter(newTag);
     };
 
     return (
         <div className="project-filter">
             <nav>
-                {filterlist.map((tag) => (
-                    <button key={tag} onClick={() => handleClick(tag)}>
-                        {tag}
-                    </button>
+                <p>Filter:</p>
+                {filterlist.map((tag, index) => (
+                    <div key={tag} className="tag-and-divider">
+                        <button
+                            className={currentFilter === tag ? 'active' : ''}
+                            onClick={() => handleClick(tag)}
+                        >
+                            {tag}
+                        </button>
+                    </div>
                 ))}
             </nav>
         </div>

@@ -33,7 +33,7 @@
     padding: 10px;
     text-decoration: none;
     width: 100%;
-    color: var(--text-color);
+    color: var(--light-text-color);
     box-sizing: border-box;
 }
 .sidebar .links img {
