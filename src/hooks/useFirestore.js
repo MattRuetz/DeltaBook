@@ -1,7 +1,14 @@
 // Hook to ADD OR REMOVE DOCUMENTS FROM FBASE COLLECTIONS
 import { db } from '../firebase/config';
 import { useReducer, useEffect, useState } from 'react';
-import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import {
+    collection,
+    addDoc,
+    deleteDoc,
+    doc,
+    Timestamp,
+    setDoc,
+} from 'firebase/firestore';
 
 let initState = {
     document: null,
@@ -37,6 +44,14 @@ const firestoreReducer = (state, action) => {
                 error: null,
             };
 
+        case 'UPDATED_DOCUMENT':
+            return {
+                isPending: false,
+                document: action.payload,
+                success: true,
+                error: null,
+            };
+
         case 'ERROR':
             return {
                 isPending: false,
@@ -67,7 +82,7 @@ export const useFirestore = (collectionName) => {
         dispatch({ type: 'IS_PENDING' });
 
         try {
-            doc.createdAt = new Date();
+            doc.createdAt = Timestamp.fromDate(new Date());
 
             const addedDocument = await addDoc(ref, {
                 ...doc,
@@ -108,9 +123,31 @@ export const useFirestore = (collectionName) => {
         }
     };
 
+    // Update document
+    const updateDocument = async (id, updates) => {
+        dispatch({ type: 'IS_PENDING' });
+
+        try {
+            const updatedDocument = await setDoc(doc(ref, id), updates);
+
+            dispatchIfMounted({
+                type: 'UPDATED_DOCUMENT',
+                payload: updateDocument,
+            });
+
+            return updatedDocument;
+        } catch (err) {
+            console.log(err);
+            dispatchIfMounted({
+                type: 'ERROR',
+                payload: 'unable to update document',
+            });
+        }
+    };
+
     useEffect(() => {
         return () => setUnmounted(true);
     }, []);
 
-    return { addDocument, deleteDocument, response };
+    return { addDocument, deleteDocument, updateDocument, response };
 };
