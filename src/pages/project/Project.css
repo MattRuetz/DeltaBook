@@ -1,29 +1,77 @@
 .project-details {
     display: grid;
+    margin-bottom: 200px;
     grid-template-columns: 3fr 2fr;
     align-items: start;
     grid-gap: 60px;
+    color: var(--dark-text-color);
 }
 
 /* project summary */
 .project-summary {
-    background-color: #fff;
+    background-color: var(--light-bg-color);
+
     padding: 30px;
     border-radius: 4px;
+}
+.project-summary .page-title {
+    color: var(--light-text-color);
+    background-color: var(--primary-color);
+    background-image: url('../../assets/pattern2.svg');
+    display: flex;
+    flex: auto;
+    height: 100px;
+    justify-content: left;
+    align-items: center;
+    line-break: auto;
+    word-wrap: normal;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+}
+.project-summary .page-title h2 {
+    /* font-family: 'Syncopate', sans-serif; */
+    letter-spacing: 0.1em;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 3em;
+    /* padding: 10px; */
+    text-align: center;
 }
 .project-summary .due-date {
     margin: 10px 0;
     font-size: 0.9em;
     color: var(--title-color);
 }
+.project-summary .due-date span {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: var(--highlight-color);
+}
+.project-summary .created-by {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: var(--title-color);
+}
+
+.project-summary .created-by .avatar {
+    transform: scale(0.3) translate(-100%, 100%);
+    position: relative;
+    margin-left: 5px;
+    margin-bottom: -7px;
+}
+.project-summary .created-by span {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: var(--primary-color);
+}
 .project-summary .details {
     margin: 30px 0;
-    color: var(--text-color);
+    color: var(--dark-text-color);
     line-height: 1.8em;
     font-size: 0.9em;
 }
 .project-summary h4 {
-    color: var(--text-color);
+    color: var(--primary-color);
+    border-bottom: 1.5px solid var(--alt-bg-color);
     font-size: 0.9em;
 }
 .project-summary .assigned-users {

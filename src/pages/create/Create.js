@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCollection } from '../../hooks/useCollection';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useFirestore } from '../../hooks/useFirestore';
@@ -6,6 +6,7 @@ import Select from 'react-select/creatable';
 import { useNavigate } from 'react-router-dom';
 import { Timestamp } from 'firebase/firestore';
 import styles from './SelectStyles';
+import terminalAnim from '../../assets/terminal-anim.svg';
 import './Create.css';
 
 const categories = [
@@ -80,17 +81,31 @@ function Create() {
         !response.error && nav('/');
     };
 
+    const nameRef = useRef('name-input');
+
     return (
         <div className="create-form">
-            <h2 className="page-title">New Project</h2>
+            <div className="page-title">
+                {name.length === 0 && (
+                    <img src={terminalAnim} alt="Waiting for title..." />
+                )}
+                {name.length > 0 && (
+                    <h3>
+                        {name.substring(0, 100)}
+                        {name.length >= 100 && ' ...'}
+                    </h3>
+                )}
+            </div>
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>Project Name:</span>
                     <input
                         required
+                        id="name-input"
                         className="new-proj-input"
                         type="text"
                         value={name}
+                        ref={nameRef}
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>

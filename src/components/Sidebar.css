@@ -1,11 +1,13 @@
 .sidebar {
     width: 300px;
     min-width: 300px;
-    background: var(--primary-color);
+    background-color: var(--primary-color);
+    background-image: url('../assets/pattern.svg');
+    /*  */
     min-height: 100vh;
     box-sizing: border-box;
     position: relative;
-    color: var(--text-color);
+    color: var(--dark-text-color);
 }
 .sidebar-content {
     position: fixed;
@@ -16,6 +18,7 @@
     text-align: center;
     letter-spacing: 2px;
     padding: 40px 30px;
+    color: var(--dark-text-color);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .sidebar .links {

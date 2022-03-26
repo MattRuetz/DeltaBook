@@ -7,7 +7,10 @@ function Dashboard() {
 
     return (
         <div>
-            <h2 className="page-title">Projects</h2>
+            <div className="page-title">
+                <h2>Projects</h2>
+            </div>
+
             <hr />
             {error && <p className="error">{error}</p>}
             {documents && <ProjectList projects={documents} />}

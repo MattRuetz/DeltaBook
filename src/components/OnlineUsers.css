@@ -3,7 +3,7 @@
     min-width: 250px;
     padding: 30px;
     box-sizing: border-box;
-    background: var(--light-bg-color);
+    background: var(--alt-bg-color);
     color: var(--heading-color);
 }
 

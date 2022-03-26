@@ -7,12 +7,14 @@ font-family: 'Syncopate', sans-serif; */
 :root {
     /* #ecdbba */
     --heading-color: #c84b31;
-    --text-color: #ecdbba;
+    --light-text-color: #ecdbba;
+    --dark-text-color: #161616;
     --primary-color: #346751;
     --highlight-color: #c84b31;
     --bg-color: #161616;
-    --light-bg-color: #555;
-    --lighter-bg-color: #ccc;
+    --alt-bg-color: #555;
+    --light-bg-color: #ecdbba;
+    --alt-light-bg-color: #c84b31;
     --online-color: #0ebb50;
     --offline-color: #c84b31;
 }
@@ -46,27 +48,41 @@ span {
 
 /* layout */
 .page-title {
-    font-family: 'Syncopate', sans-serif;
-    letter-spacing: 0.05em;
-    /* font-family: 'Major Mono Display', monospace; */
-    font-size: 1.1em;
-    color: var(--text-color);
-    text-shadow: 0px 0px 10px var(--highlight-color);
-    padding: 10px 20% 10px 10px;
-    display: inline-block;
+    color: var(--dark-text-color);
+    background-color: var(--highlight-color);
+    background-image: url('./assets/pattern.svg');
+    display: flex;
+    flex: auto;
+    height: 100px;
+    justify-content: left;
+    align-items: center;
+    line-break: auto;
+    word-wrap: normal;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+}
+.page-title h2 {
+    /* font-family: 'Syncopate', sans-serif; */
+    letter-spacing: 0.1em;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 3em;
+    /* padding: 10px; */
+    text-align: center;
 }
 .btn {
     background: var(--bg-color);
     padding: 8px 12px;
     border-radius: 4px;
-    color: var(--text-color);
+    color: var(--primary-color);
     cursor: pointer;
     font-size: 1em;
-    border: 1px solid var(--text-color);
-    transition: box-shadow 0.2s;
+    border: 1px solid var(--primary-color);
+    transition: all 0.2s;
 }
 .btn:hover {
-    box-shadow: 0 0 10px var(--highlight-color);
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: 0 0 3px var(--primary-color);
 }
 
 .btn:active {

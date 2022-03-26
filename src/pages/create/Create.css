@@ -1,12 +1,22 @@
 .create-form {
     max-width: 600px;
 }
+.create-form .page-title {
+    transition: all 0.2s ease;
+
+    min-height: 100px;
+}
+.create-form .page-title h3 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
 .create-form span {
     color: var(--heading-color);
 }
 .new-proj-input:focus {
     outline: unset;
-    box-shadow: 0px 0px 8px var(--highlight-color);
+    box-shadow: 0px 0px 6px var(--highlight-color);
     transition: all 0.3s;
     /* border-radius: 4px; */
 }
