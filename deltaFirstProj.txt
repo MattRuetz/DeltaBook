@@ -1,0 +1,21 @@
+Lots to do: 
+- alt color theme, and light/dark modes
+- mobile responsive
+- slide-out sidebars (All Users shrinks to only show avatars)
+- consistent aesthetic and polishing
+- Break up projects into a Phases system
+
+Big Picture:
+- Projects > Stages > Deltas (Front-End, Back-End, Full-Stack)
+- Deltas can be re-ordered by drag and drop (with confirm prompt), and ordered by date added, priority, or some weighting of factors to show the most urgent deltas first
+- Comments on Deltas. Clicking a delta shows a side panel to the right, with tabs (Details from delta creator [estimated time-to-complete, dependency links to other deltas, etc.], Comments tab, 
+- Triangle from green->red to show amount of delta remaining before each delta is complete, and each phase. Hover over triangle for more info on progress, and who requested the delta, etc.
+
+Long-term:
+- connect with GitHub API to link deltas to GitHub issues. Automatically add comments on a delta to comments on the associated GitHub commits (if option enabled by project creator.)
+- Connect other Apps I've made for more functionality, like TicketDesk API for tracking deltas, myMoney app altered to track project budget.
+
+I'm feeling lucky button:
+- Displays a random delta for the user with minimal dependencies to other deltas, minimal estimated time-to-complete, maximal priority.
+- For when developers need a simple win, task while they wait, or just need to cross something off a list for the satisfaction of it
+

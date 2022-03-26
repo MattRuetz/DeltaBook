@@ -1,9 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useDocument } from '../../hooks/useDocument';
-
+// Local components
+import ProjectSummary from './ProjectSummary';
+import ProjectComments from './ProjectComments';
 // Components
 import Spinner from '../../components/Spinner';
+// style
+import './Project.css';
 
 function Project() {
     const { id } = useParams();
@@ -16,9 +20,12 @@ function Project() {
     if (!document) return <Spinner />;
 
     //
-    return <div className="project-details">
-        <h1>{document.name}</h1>
-    </div>
+    return (
+        <div className="project-details">
+            <ProjectSummary project={document} />
+            <ProjectComments project={document} />
+        </div>
+    );
 }
 
 export default Project;

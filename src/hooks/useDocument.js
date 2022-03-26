@@ -15,8 +15,12 @@ export const useDocument = (collectionName, docID) => {
         const unsub = onSnapshot(
             docRef,
             (snap) => {
-                setDocument({ ...snap.data(), id: snap.id });
-                setError(null);
+                if (snap.data()) {
+                    setDocument({ ...snap.data(), id: snap.id });
+                    setError(null);
+                } else {
+                    setError('This document does not exist!');
+                }
             },
             (err) => {
                 setError('Unable to fetch project data');
