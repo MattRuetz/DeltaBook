@@ -12,7 +12,7 @@ font-family: 'Syncopate', sans-serif; */
     --primary-color: #346751;
     --highlight-color: #c84b31;
     --bg-color: #161616;
-    --alt-bg-color: #555;
+    --alt-bg-color: #212121;
     --light-bg-color: #ecdbba;
     --alt-light-bg-color: #c84b31;
     --online-color: #0ebb50;
@@ -102,7 +102,7 @@ input,
 textarea {
     padding: 8px 6px;
     font-size: 1em;
-    color: var(--text-color);
+    color: var(--light-text-color);
     width: 100%;
     box-sizing: border-box;
     border: 1px solid var(--highlight-color);

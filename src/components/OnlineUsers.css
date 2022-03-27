@@ -4,19 +4,34 @@
     padding: 30px;
     box-sizing: border-box;
     background: var(--alt-bg-color);
-    color: var(--heading-color);
+    color: var(--light-text-color);
 }
 
 .user-list span {
-    color: var(--text-color);
+    color: var(--light-text-color);
 }
 
 .user-list h2 {
     text-align: right;
     margin-bottom: 40px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
     font-size: 1.2em;
+}
+.user-list h3 {
+    text-align: left;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-right: 4px solid;
+    padding-right: 20px;
+    border-bottom: 4px solid;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.user-list p {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 0.7em;
+    font-weight: 500;
 }
 .user-list .user-list-item {
     display: flex;
@@ -24,6 +39,10 @@
     align-items: center;
     margin: 20px auto;
 }
+.user-list .user-list-item.online {
+    margin-bottom: 100px;
+}
+
 .user-list .avatar {
     margin-left: 10px;
     width: 40px;
@@ -36,4 +55,29 @@
     justify-content: space-around;
     font-size: 26px;
     line-height: 0.8;
+}
+
+.sub-heading span {
+    color: var(--light-text-color);
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 80px;
+}
+
+.sub-heading.online {
+    color: var(--online-color);
+    border-color: var(--online-color);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.all-online-message {
+    color: var(--online-color);
+}
+
+.sub-heading.offline {
+    color: var(--offline-color);
+    border-color: var(--offline-color);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.all-offline-message {
+    color: var(--offline-color);
 }
