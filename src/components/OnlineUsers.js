@@ -11,10 +11,8 @@ function OnlineUsers() {
 
     useEffect(() => {
         setOnlineList([]);
-        const tempOnline = [];
-        const tempOffline = [];
-
         setOfflineList([]);
+
         if (documents && !error) {
             documents.forEach((user) => {
                 if (user.online === true) {
@@ -34,9 +32,6 @@ function OnlineUsers() {
             </div>
             {error && <div className="error">{error}</div>}
             {/* online users list */}
-            {onlineList.length === 0 && (
-                <p className="all-online-message">Everyone is offline 😔</p>
-            )}
             {onlineList.length > 0 && (
                 <div className="sub-heading online">
                     <h3>
@@ -61,7 +56,7 @@ function OnlineUsers() {
 
             {/* Offline users list */}
             {offlineList.length === 0 && (
-                <p className="all-offline-message">Everyone is offline 😔</p>
+                <span className="all-online-message">Everyone is online!</span>
             )}
             {offlineList.length > 0 && (
                 <div className="sub-heading offline">

@@ -62,6 +62,7 @@ export default function ProjectComments({ project }) {
                 <label>
                     <span>New comment:</span>
                     <textarea
+                        className="comment-editor-window"
                         required
                         onChange={(e) => setNewComment(e.target.value)}
                         value={newComment}

@@ -27,19 +27,14 @@
     font-size: 1.2em;
     font-weight: 500;
 }
-.user-list p {
-    text-align: left;
-    margin-bottom: 40px;
-    font-size: 0.7em;
-    font-weight: 500;
-}
+
 .user-list .user-list-item {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin: 20px auto;
 }
-.user-list .user-list-item.online {
+.user-list .user-list-item.online:last-of-type {
     margin-bottom: 100px;
 }
 
@@ -69,15 +64,17 @@
     border-color: var(--online-color);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
-.all-online-message {
+span.all-online-message {
     color: var(--online-color);
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-top: -80px;
 }
 
 .sub-heading.offline {
     color: var(--offline-color);
     border-color: var(--offline-color);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-}
-.all-offline-message {
-    color: var(--offline-color);
 }

@@ -91,11 +91,14 @@
 
 /* project comments */
 .project-comments label {
-    margin-bottom: 0px;
+    color: var(--light-text-color);
 }
 .project-comments textarea {
     min-height: 40px;
     font-size: 1.2em;
+}
+.project-comments span {
+    color: var(--light-bg-color);
 }
 
 /* comment list */
@@ -133,4 +136,9 @@
 .comment-content {
     color: var(--dark-text-color);
     font-size: 0.9em;
+}
+.comment-editor-window {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    font-family: 'Kanit', sans-serif;
 }
