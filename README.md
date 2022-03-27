@@ -1,4 +1,7 @@
-# Delta Book ⟁
+# ⟁ Delta Book ⟁
+
+ Delta Book 
+
 
 ## A Vivid Project-Tracking Web App
 Made with React and Firebase.
