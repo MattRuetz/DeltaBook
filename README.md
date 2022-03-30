@@ -21,7 +21,7 @@ Users must create an account by filling out the signup form in order to use the 
 - Display Name (16 characters MAX)
 - Avatar Photo (2MB MAX)
 
-__Authentication and user data is all managed with Google Firebase services to ensure user security and proper data protection__
+__Authentication and user data is all managed with Google Firebase services for user security and proper data protection__
 
 ![image](https://user-images.githubusercontent.com/91920147/160295422-937090c8-e379-4943-96d5-b2c22208eb4e.png)
 
