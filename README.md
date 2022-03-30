@@ -19,7 +19,7 @@ Users must create an account by filling out the signup form in order to use the 
 - Email Address
 - Password
 - Display Name ( 16 characters MAX)
-- Avatar Photo ( 2MB Size MAX)
+- Avatar Photo ( 2MB MAX)
 
 __Authentication and user data is all managed with Google Firebase services to ensure user security and proper data protection__
 
