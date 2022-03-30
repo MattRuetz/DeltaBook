@@ -10,7 +10,7 @@ This is an application designed to allow many users to create and collaborate on
 The styling was done to be eye-catching, and to stand out among other web-apps the user is interacting with.
 
 *This is an early stage version of the app, with a default dark color theme*
-![image](https://user-images.githubusercontent.com/91920147/160736342-dbb04531-7f83-4db0-b491-48ebc50809b8.png)
+![image](https://user-images.githubusercontent.com/91920147/160736478-02d524b0-f16e-4274-a368-7ebee6f9dc8e.png)
 
 
 
