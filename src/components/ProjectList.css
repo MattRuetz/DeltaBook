@@ -28,8 +28,6 @@
     font-size: 0.9em;
 }
 .project-list .assigned-to {
-    margin-top: 20px;
-    padding-top: 10px;
     border-top: 1px dashed var(--lighter-bg-color);
 }
 .project-list ul {
@@ -42,4 +40,18 @@
 .project-list .avatar {
     width: 30px;
     height: 30px;
+}
+
+.category-label p {
+    position: absolute;
+    padding: 0 8px;
+    color: var(--primary-color);
+    border-right: 3px solid var(--highlight-color);
+    border-bottom: 3px solid var(--highlight-color);
+    border-radius: 3%;
+    margin-top: 10px;
+}
+
+.details {
+    margin-top: 45px;
 }
